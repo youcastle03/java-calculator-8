@@ -29,6 +29,7 @@ public class Parser {
             }
             String customDelimiter = splitString[0].substring(CUSTOM_DELIMITER_PREFIX.length());
             numberExpression = splitString[1];
+            validator.isSingleChar(customDelimiter);
             delimitersRegex = DEFAULT_DELIMITERS + "|" + Pattern.quote(customDelimiter);
         }
 
@@ -36,7 +37,9 @@ public class Parser {
 
         return Arrays.stream(numbers)
                 .map(String::trim)
+                .peek(validator::isNum)
                 .map(Integer::parseInt)
+                .peek(validator::isPositive)
                 .toList();
     }
 }
