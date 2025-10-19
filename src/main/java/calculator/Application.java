@@ -8,5 +8,7 @@ public class Application {
         Parser parser = new Parser(validator);
         Adder adder = new Adder();
         Calculator calculator = new Calculator(in, out, parser, adder);
+
+        calculator.run();
     }
 }

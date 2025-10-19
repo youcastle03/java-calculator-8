@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.List;
+
 public class Calculator {
 
     private final InputHandler in;
@@ -12,5 +14,12 @@ public class Calculator {
         this.out = out;
         this.parser = parser;
         this.adder = adder;
+    }
+
+    public void run(){
+        String expression = in.readLine();
+        List<Integer> numbers = parser.parseNum(expression);
+        int result = adder.addNum(numbers);
+        out.printResult(result);
     }
 }
