@@ -15,8 +15,8 @@ public class Parser {
         this.validator = validator;
     }
 
-    public List<Integer> parseNum(String data){
-        if(data == null || data.isBlank()){
+    public List<Integer> parseNum(String data) {
+        if (data == null || data.isBlank()) {
             return List.of(0);
         }
         String delimitersRegex = DEFAULT_DELIMITERS;
@@ -24,7 +24,7 @@ public class Parser {
 
         if (data.startsWith(CUSTOM_DELIMITER_PREFIX)) {
             String[] splitString = data.split(CUSTOM_DELIMITER_SUFFIX);
-            if(splitString.length < 2){
+            if (splitString.length < 2) {
                 throw new IllegalArgumentException("올바르지 않은 구분자를 입력하셨습니다.");
             }
             String customDelimiter = splitString[0].substring(CUSTOM_DELIMITER_PREFIX.length());

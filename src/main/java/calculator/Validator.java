@@ -8,13 +8,13 @@ public class Validator {
 
 
     public void isNum(String str) {
-        if(!digits.matcher(str).matches()) {
+        if (!digits.matcher(str).matches()) {
             throw new IllegalArgumentException("양수만 입력해 주세요");
         }
     }
 
     public void isPositive(int n) {
-        if(n<=0){
+        if (n <= 0) {
             throw new IllegalArgumentException("양수만 입력해 주세요");
         }
     }

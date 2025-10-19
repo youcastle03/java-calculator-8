@@ -16,7 +16,7 @@ public class Calculator {
         this.adder = adder;
     }
 
-    public void run(){
+    public void run() {
         String expression = in.readLine();
         List<Integer> numbers = parser.parseNum(expression);
         int result = adder.addNum(numbers);
